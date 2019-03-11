@@ -7,8 +7,7 @@
 
 public class SickPerson extends Person 
 {
-	private String name;
-	private int age, severity;
+	private int severity;
 	
 	/**
 	 * Stores information about the SickPerson.
@@ -55,7 +54,7 @@ public class SickPerson extends Person
 	@Override
 	public String toString() 
 	{
-		return String.format("%s In for %s", name, severity);
+		return String.format("%s In for %s", super.toString(), severity);
 	}
 
 }

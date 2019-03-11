@@ -6,8 +6,6 @@
  */
 public class HealthyPerson extends Person
 {
-	private String name;
-	private int age;
 	private String reason;
 	
 	/**
