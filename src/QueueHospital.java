@@ -12,7 +12,7 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
 	 */
 	public QueueHospital()
 	{
-		
+		super();
 	}
 	
 	/**

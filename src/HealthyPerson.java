@@ -34,13 +34,17 @@ public class HealthyPerson extends Person
 	 */
 	protected int compareToImpl(Person o) 
 	{
-		if(o.equals())
+		if(o.getName().charAt(0) > this.getName().charAt(0))
 		{
-			return 0;
+			return -1;
+		}
+		else if(o.getName().charAt(0) < this.getName().charAt(0))
+		{
+			return 1;
 		}
 		else
 		{
-			
+			return 0;
 		}
 	}
 	
@@ -51,7 +55,7 @@ public class HealthyPerson extends Person
 	 */
 	@Override
 	public String toString() {
-		return String.format("%s In for %s", super.toString(), reason);
+		return String.format("%s In for %s", super.toString(), this.reason);
 	}
 
 }

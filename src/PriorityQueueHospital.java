@@ -12,7 +12,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 	 */
 	public PriorityQueueHospital()
 	{
-		
+		super();
 	}
 	
 	/**

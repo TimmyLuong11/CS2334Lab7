@@ -23,6 +23,11 @@ public class SickPerson extends Person
 		this.severity = serverity;
 	}
 	
+	public int getServerity()
+	{
+		return severity;
+	}
+	
 	/**
 	 * Implementation method for Person's compareTo method(). 
 	 * Does the actual legwork of comparison to compare a SickPerson (self) vs. another Person (o).
@@ -36,13 +41,17 @@ public class SickPerson extends Person
 	 */
 	protected int compareToImpl(Person p) 
 	{
-		if(o.equals())
+		if(p.getServerity() > this.getServerity())
 		{
-			return 0;
+			return -1;
+		}
+		else if(p.getServerity() < this.getServerity())
+		{
+			return 1;
 		}
 		else
 		{
-			
+			return 0;
 		}
 	}
 

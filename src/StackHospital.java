@@ -12,7 +12,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	 */
 	public StackHospital()
 	{
-		
+		super();
 	}
 	
 	/**
