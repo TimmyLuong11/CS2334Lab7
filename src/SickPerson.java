@@ -17,7 +17,7 @@ public class SickPerson extends Person
 	 * @param The severity of the illness in the SickPerson. 
 	 * The higher the value, the more severe the illness.
 	 */
-	public SickPerson(String name, int age, int serverity)
+	public SickPerson(String name, int age, int severity)
 	{
 		super(name, age);
 		this.severity = severity;
@@ -36,28 +36,20 @@ public class SickPerson extends Person
 	 */
 	protected int compareToImpl(Person p) 
 	{
-		if(p instanceof SickPerson)
+		if(this.severity < ((SickPerson) p).severity)
 		{
-			if(this.getSeverity() < ((SickPerson) p).getSeverity()) 
-			{
-				return 1;
-			}
-			else if(this.getSeverity() > ((SickPerson) p).getSeverity()) 
-			{
-				return -1;
-			}
-			else
-			{
-				return 0;
-			}
-			}
+			return 1;
+		}
+		else if(this.severity > ((SickPerson) p).severity) 
+		{
+			return -1;
+		}
+		else 
+		{
 			return 0;
+		}
 	}
 
-	private int getSeverity() 
-	{
-		return severity;
-	}
 
 	/**
 	 * Gives some information about the SickPerson.
@@ -67,7 +59,7 @@ public class SickPerson extends Person
 	@Override
 	public String toString() 
 	{
-		return String.format("%s In for %s", super.toString(), this.severity);
+		return String.format("%s Severity level %d", super.toString(), this.severity);
 	}
 
 }
