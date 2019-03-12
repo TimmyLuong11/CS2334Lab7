@@ -23,22 +23,22 @@ public class HealthyPerson extends Person
 	
 	/**
 	 * Implementation method for Person's compareTo method(). 
-	 * Does the actual legwork of comparison to compare a HealthyPerson (self) vs. another Person (o).
+	 * Does the actual legwork of comparison to compare a HealthyPerson (self) vs. another Person (p).
 	 * 
-	 * @param o - The other Person to compare self to.
-	 * @return If o is not of type HealthyPerson, return 0. 
+	 * @param p - The other Person to compare self to.
+	 * @return If p is not of type HealthyPerson, return 0. 
 	 * Else, return (ignoring case): 
 	 * 	(1) self's name comes "before" o's name: negative number 
 	 * 	(2) self's name comes "after" p's name: positive number 
 	 * 	(3) names are equivalent: 0 i.e. the natural ordering of the name strings, ignoring case - orders alphabetically.
 	 */
-	protected int compareToImpl(Person o) 
+	protected int compareToImpl(Person p) 
 	{
-		if(o.getName().charAt(0) > this.getName().charAt(0))
+		if(p.getName().charAt(0) > this.getName().charAt(0))
 		{
 			return -1;
 		}
-		else if(o.getName().charAt(0) < this.getName().charAt(0))
+		else if(p.getName().charAt(0) < this.getName().charAt(0))
 		{
 			return 1;
 		}

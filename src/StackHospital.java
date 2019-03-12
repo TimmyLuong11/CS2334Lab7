@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Class representing a Hospital that orders its patients in the following way: Patients are ordered via a Stack. 
  * 
@@ -7,6 +9,8 @@
  */
 public class StackHospital<PatientType> extends Hospital<PatientType>
 {
+	private Stack<PatientType> sH = new Stack<>();
+	
 	/**
 	 * Initializes the Patient Stack.
 	 */
@@ -23,7 +27,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public void addPatient(PatientType patient)
 	{
-		
+		sH.push(patient);
 	}
 
 	/**
@@ -35,7 +39,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public PatientType nextPatient()
 	{
-		return null;
+		return sH.peek();
 	}
 
 	/**
@@ -47,7 +51,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public PatientType treatNextPatient()
 	{
-		return null;
+		return sH.pop();
 	}
 
 	/**
@@ -58,7 +62,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public int numPatients()
 	{
-		return 0;
+		return sH.size();
 	}
 
 	/**
@@ -69,7 +73,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public String hospitalType() 
 	{
-		return null;
+		return "Stack Hospital";
 	}
 
 	/**
@@ -80,7 +84,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public String allPatientInfo()
 	{
-		return null;
+		return sH.toString();
 	}
 
 }

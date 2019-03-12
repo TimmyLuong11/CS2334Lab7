@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Class representing a Hospital that orders its patients in the following way: Patients are ordered via a PriorityQueue. 
  * 
@@ -7,6 +9,8 @@
  */
 public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital<PatientType>
 {
+	private Stack<PatientType> pQH = new Stack<>();
+	
 	/**
 	 * Initializes the Patient PriorityQueue.
 	 */
@@ -22,7 +26,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 	@Override
 	public void addPatient(PatientType patient)
 	{
-		
+		pQH.push(patient);
 	}
 
 	/**
@@ -34,7 +38,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 	@Override
 	public PatientType nextPatient()
 	{
-		return null;
+		return pQH.peek();
 	}
 
 	/**
@@ -46,7 +50,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 	@Override
 	public PatientType treatNextPatient()
 	{
-		return null;
+		return pQH.pop();
 	}
 
 	/**
@@ -57,7 +61,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 	@Override
 	public int numPatients()
 	{
-		return 0;
+		return pQH.size();
 	}
 
 	/**
@@ -68,7 +72,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 	@Override
 	public String hospitalType()
 	{
-		return null;
+		return "Priority Queue Hospital";
 	}
 
 	/**
@@ -79,7 +83,7 @@ public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> 
 	@Override
 	public String allPatientInfo() 
 	{
-		return null;
+		return pQH.toString();
 	}
 
 }

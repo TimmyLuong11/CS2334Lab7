@@ -20,20 +20,15 @@ public class SickPerson extends Person
 	public SickPerson(String name, int age, int serverity)
 	{
 		super(name, age);
-		this.severity = serverity;
-	}
-	
-	public int getServerity()
-	{
-		return severity;
+		this.severity = severity;
 	}
 	
 	/**
 	 * Implementation method for Person's compareTo method(). 
-	 * Does the actual legwork of comparison to compare a SickPerson (self) vs. another Person (o).
+	 * Does the actual legwork of comparison to compare a SickPerson (self) vs. another Person (p).
 	 * 
-	 * @param o - The other Person to compare self to.
-	 * @return If o is not of type SickPerson, return 0. 
+	 * @param p - The other Person to compare self to.
+	 * @return If p is not of type SickPerson, return 0. 
 	 * Else, return (ignoring case): 
 	 * 	(1) self's severity is greater than o's severity: negative number 
 	 * 	(2) self's severity is less than o's severity: positive number 
@@ -41,18 +36,27 @@ public class SickPerson extends Person
 	 */
 	protected int compareToImpl(Person p) 
 	{
-		if(p.getServerity() > this.getServerity())
+		if(p instanceof SickPerson)
 		{
-			return -1;
-		}
-		else if(p.getServerity() < this.getServerity())
-		{
-			return 1;
-		}
-		else
-		{
+			if(this.getSeverity() < ((SickPerson) p).getSeverity()) 
+			{
+				return 1;
+			}
+			else if(this.getSeverity() > ((SickPerson) p).getSeverity()) 
+			{
+				return -1;
+			}
+			else
+			{
+				return 0;
+			}
+			}
 			return 0;
-		}
+	}
+
+	private int getSeverity() 
+	{
+		return severity;
 	}
 
 	/**
@@ -63,7 +67,7 @@ public class SickPerson extends Person
 	@Override
 	public String toString() 
 	{
-		return String.format("%s In for %s", super.toString(), severity);
+		return String.format("%s In for %s", super.toString(), this.severity);
 	}
 
 }
