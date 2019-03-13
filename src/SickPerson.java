@@ -42,11 +42,11 @@ public class SickPerson extends Person
 		}
 		else
 		{
-			if (((SickPerson)p).severity < this.severity) 
+			if(((SickPerson)p).severity < this.severity) 
 			{	
 				return 1;
 			}
-			else if (((SickPerson)p).severity > this.severity) 
+			else if(((SickPerson)p).severity > this.severity) 
 			{
 				return -1;
 			}
