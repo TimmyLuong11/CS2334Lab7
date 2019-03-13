@@ -36,17 +36,24 @@ public class SickPerson extends Person
 	 */
 	protected int compareToImpl(Person p) 
 	{
-		if(this.severity < ((SickPerson) p).severity)
-		{
-			return 1;
-		}
-		else if(this.severity > ((SickPerson) p).severity) 
-		{
-			return -1;
-		}
-		else 
+		if (p instanceof HealthyPerson)
 		{
 			return 0;
+		}
+		else
+		{
+			if (((SickPerson)p).severity < this.severity) 
+			{	
+				return 1;
+			}
+			else if (((SickPerson)p).severity > this.severity) 
+			{
+				return -1;
+			}
+			else 
+			{
+				return 0;
+			}
 		}
 	}
 

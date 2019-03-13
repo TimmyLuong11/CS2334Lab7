@@ -34,18 +34,26 @@ public class HealthyPerson extends Person
 	 */
 	protected int compareToImpl(Person p) 
 	{
-		if(p.getName().charAt(0) > this.getName().charAt(0))
-		{
-			return -1;
-		}
-		else if(p.getName().charAt(0) < this.getName().charAt(0))
-		{
-			return 1;
-		}
-		else
+		if (p instanceof SickPerson) 
 		{
 			return 0;
 		}
+		else
+		{	
+			if ((p.getName().compareTo(this.getName()) > 0))
+			{	
+				return -1;
+			}
+			else if ((p.getName().compareTo(this.getName()) < 0)) 
+			{
+				return 1;
+			}
+			else 
+			{
+				return 0;
+			}
+		}
+		
 	}
 	
 	/**

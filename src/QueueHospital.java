@@ -72,7 +72,7 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public String hospitalType() 
 	{
-		return "" + qH.getClass();
+		return "QueueHospital";
 	}
 	
 	/**

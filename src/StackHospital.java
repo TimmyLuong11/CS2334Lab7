@@ -74,7 +74,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public String hospitalType() 
 	{
-		return "" + sH.getClass();
+		return "StackHospital";
 	}
 
 	/**
