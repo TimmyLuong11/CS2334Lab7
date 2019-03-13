@@ -3,6 +3,9 @@ import org.junit.Test;
 
 public class AnimalTest 
 {
+	/**
+	 * Test the animal class
+	 */
 	@Test
 	public void AnimalTest()
 	{

@@ -3,6 +3,9 @@ import org.junit.Test;
 
 public class HospitalTest 
 {
+	/**
+	 * Thet the stack sorting for hospital
+	 */
 	@Test
 	public void StackHospitalTest()
 	{
@@ -38,13 +41,19 @@ public class HospitalTest
 		Assert.assertEquals(0, sh1.numPatients());
 		Assert.assertEquals(0, sh2.numPatients());
 		
-		Assert.assertEquals("Hosptial Type Matches","Stack Hospital", sh1.hospitalType());
-		Assert.assertEquals("Hosptial Type Matches","Stack Hospital", sh2.hospitalType());
+		Assert.assertEquals("Hosptial Type Matches","class java.util.Stack", sh1.hospitalType());
+		Assert.assertEquals("Hosptial Type Matches","class java.util.Stack", sh2.hospitalType());
 		
 		Assert.assertEquals("[]", sh1.allPatientInfo());
 		Assert.assertEquals("[]", sh2.allPatientInfo());
+		
+		Assert.assertEquals("A class java.util.Stack-type hospital with 0 patients.", sh1.toString());
+		Assert.assertEquals("A class java.util.Stack-type hospital with 0 patients.", sh2.toString());
 	}
 	
+	/**
+	 * Test the queue sorting for hospital
+	 */
 	@Test
 	public void QueueHospitalTest()
 	{
@@ -80,43 +89,61 @@ public class HospitalTest
 		Assert.assertEquals(0, qh1.numPatients());
 		Assert.assertEquals(0, qh2.numPatients());
 		
-		Assert.assertEquals("Hosptial Type Matches","Queue Hospital", qh1.hospitalType());
-		Assert.assertEquals("Hosptial Type Matches","Queue Hospital", qh2.hospitalType());
+		Assert.assertEquals("Hosptial Type Matches","class java.util.LinkedList", qh1.hospitalType());
+		Assert.assertEquals("Hosptial Type Matches","class java.util.LinkedList", qh2.hospitalType());
 		
 		Assert.assertEquals("[]", qh1.allPatientInfo());
 		Assert.assertEquals("[]", qh2.allPatientInfo());
+		
+		Assert.assertEquals("A class java.util.LinkedList-type hospital with 0 patients.", qh1.toString());
+		Assert.assertEquals("A class java.util.LinkedList-type hospital with 0 patients.", qh2.toString());
 	}
 	
+	/**
+	 * Test the Priority Queue sorting in hospital
+	 */
 	@Test
 	public void PriorityQueueHospitalTest()
 	{
-		/*PriorityQueueHospital<SickPerson> pqh1 = new PriorityQueueHospital<>();
+		PriorityQueueHospital<SickPerson> pqh1 = new PriorityQueueHospital<>();
 		PriorityQueueHospital<HealthyPerson> pqh2 = new PriorityQueueHospital<>();
 		
 		SickPerson sp1 = new SickPerson("Shawn", 22, 1);
 		SickPerson sp2 = new SickPerson("Richard", 2, 10);
 		SickPerson sp3 = new SickPerson("Josh", 13, 4);
 		HealthyPerson hp1 = new HealthyPerson("Jay", 23, "Checkup");
+		HealthyPerson hp2 = new HealthyPerson("Bob", 25, "Depression");
+		HealthyPerson hp3 = new HealthyPerson("Joe", 15, "Flu Shot");
 		
 		pqh1.addPatient(sp1);
 		pqh1.addPatient(sp2);
 		pqh1.addPatient(sp3);
 		pqh2.addPatient(hp1);
+		pqh2.addPatient(hp2);
+		pqh2.addPatient(hp3);
 		
-		Assert.assertEquals(sp1, pqh1.nextPatient());
-		Assert.assertEquals(sp1, pqh1.nextPatient());
+		Assert.assertEquals(sp2, pqh1.nextPatient());
+		Assert.assertEquals(sp2, pqh1.nextPatient());
+		Assert.assertEquals(hp2, pqh2.nextPatient());
+		Assert.assertEquals(hp2, pqh2.nextPatient());
 		
-		Assert.assertEquals(sp1, pqh1.treatNextPatient());
 		Assert.assertEquals(sp2, pqh1.treatNextPatient());
 		Assert.assertEquals(sp3, pqh1.treatNextPatient());
+		Assert.assertEquals(sp1, pqh1.treatNextPatient());
+		Assert.assertEquals(hp2, pqh2.treatNextPatient());
+		Assert.assertEquals(hp3, pqh2.treatNextPatient());
+		Assert.assertEquals(hp1, pqh2.treatNextPatient());
 		
 		Assert.assertEquals(0, pqh1.numPatients());
-		Assert.assertEquals(1, pqh2.numPatients());
+		Assert.assertEquals(0, pqh2.numPatients());
 		
-		Assert.assertEquals("Hosptial Type Matches","Queue Hospital", pqh1.hospitalType());
-		Assert.assertEquals("Hosptial Type Matches","Queue Hospital", pqh2.hospitalType());
+		Assert.assertEquals("Hosptial Type Matches","class java.util.PriorityQueue", pqh1.hospitalType());
+		Assert.assertEquals("Hosptial Type Matches","class java.util.PriorityQueue", pqh2.hospitalType());
 		
 		Assert.assertEquals("[]", pqh1.allPatientInfo());
-		*/
+		Assert.assertEquals("[]", pqh2.allPatientInfo());
+		
+		Assert.assertEquals("A class java.util.PriorityQueue-type hospital with 0 patients.", pqh1.toString());
+		Assert.assertEquals("A class java.util.PriorityQueue-type hospital with 0 patients.", pqh2.toString());
 	}
 }

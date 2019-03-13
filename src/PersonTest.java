@@ -3,6 +3,9 @@ import org.junit.Test;
 
 public class PersonTest 
 {
+	/**
+	 * Test the sick person class.
+	 */
 	@Test
 	public void SickPersonTest() 
 	{
@@ -33,6 +36,9 @@ public class PersonTest
 		
 	}
 	
+	/**
+	 * Test the healthy person class.
+	 */
 	@Test
 	public void HealthyPersonTest()
 	{

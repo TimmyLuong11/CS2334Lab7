@@ -9,7 +9,7 @@ import java.util.Stack;
  */
 public class StackHospital<PatientType> extends Hospital<PatientType>
 {
-	private Stack<PatientType> sH = new Stack<>();
+	private Stack<PatientType> sH;
 	
 	/**
 	 * Initializes the Patient Stack.
@@ -17,6 +17,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	public StackHospital()
 	{
 		super();
+		sH = new Stack<>();
 	}
 	
 	/**
@@ -73,7 +74,7 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public String hospitalType() 
 	{
-		return "Stack Hospital";
+		return "" + sH.getClass();
 	}
 
 	/**

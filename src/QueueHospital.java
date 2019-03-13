@@ -9,7 +9,7 @@ import java.util.LinkedList;
  */
 public class QueueHospital<PatientType> extends Hospital<PatientType>
 {
-	private LinkedList<PatientType> qH = new LinkedList<>();
+	private LinkedList<PatientType> qH;
 	
 	/**
 	 * Initializes the Patient Queue.
@@ -17,6 +17,7 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
 	public QueueHospital()
 	{
 		super();
+		qH = new LinkedList<>();
 	}
 	
 	/**
@@ -71,7 +72,7 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
 	@Override
 	public String hospitalType() 
 	{
-		return "Queue Hospital";
+		return "" + qH.getClass();
 	}
 	
 	/**
