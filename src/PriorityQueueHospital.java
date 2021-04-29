@@ -10,7 +10,7 @@ import java.util.Queue;
  */
 public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
 {
-	private Queue<PatientType> pQH;
+	private PriorityQueue<PatientType> pQH;
 	
 	/**
 	 * Initializes the Patient PriorityQueue.
